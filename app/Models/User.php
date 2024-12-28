@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Services\ZeroMQService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -11,6 +12,8 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
+
+    private ZeroMQService $zeroMQService;
 
     /**
      * The attributes that are mass assignable.
@@ -44,5 +47,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function aFetchAll()
+    {
+        $this->zeroMQService = new ZeroMQService();
+        $sql = "SELECT * FROM users";
+        $this->zeroMQService->execAsynch($sql);
+    }
+
+    public function aFetchResults()
+    {
+        return $this->zeroMQService->aSyncFetch(self::class);
     }
 }

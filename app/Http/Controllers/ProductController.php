@@ -19,6 +19,7 @@ class ProductController extends Controller
         $currentItems = array_slice($productsArray, ($currentPage - 1) * $perPage, $perPage);
         $products = new LengthAwarePaginator($currentItems, count($productsArray), $perPage, $currentPage, [
             'path' => LengthAwarePaginator::resolveCurrentPath(),
+            'query' => $request->query(), // Retain query parameters
         ]);
         return view('products.index', compact('products'));
     }

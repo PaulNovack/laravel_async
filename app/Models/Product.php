@@ -18,10 +18,13 @@ class Product extends Model
     ];
     private ZeroMQService $zeroMQService;
 
-    public function aFetchAll()
+    public function aFetchAll($search = null)
     {
         $this->zeroMQService = new ZeroMQService();
         $sql = "SELECT * FROM products";
+        if ($search) {
+            $sql .= " WHERE name LIKE '%$search%' OR description LIKE '%$search%'";
+        }
         $this->zeroMQService->execAsynch($sql);
     }
 

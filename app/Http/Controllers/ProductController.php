@@ -11,7 +11,8 @@ class ProductController extends Controller
     public function index()
     {
         $product = new Product();
-        $product->aFetchAll();
+        $search = $request->input('search');
+        $product->aFetchAll($search);
         $productsArray = $product->aFetchResults();
         $perPage = 10;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();

@@ -12,12 +12,15 @@ class ProductController extends Controller
     {
         $product = new Product();
         $search = $request->input('search');
-        $product->aFetchSearch($search);
-        $productsArray = $product->aFetchResults();
+        $totalProducts = $product->aFetchCount($search);
         $perPage = 10;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $currentItems = array_slice($productsArray, ($currentPage - 1) * $perPage, $perPage);
-        $products = new LengthAwarePaginator($currentItems, count($productsArray), $perPage, $currentPage, [
+        $offset = ($currentPage - 1) * $perPage;
+
+        $product->aFetchSearch($search, $offset, $perPage);
+        $productsArray = $product->aFetchResults();
+
+        $products = new LengthAwarePaginator($productsArray, $totalProducts, $perPage, $currentPage, [
             'path' => LengthAwarePaginator::resolveCurrentPath(),
             'query' => $request->query(), // Retain query parameters
         ]);

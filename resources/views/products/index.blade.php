@@ -20,7 +20,7 @@
             </thead>
             <tbody class="text-gray-600">
                 @foreach($products as $product)
-                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                    <tr class="border-b border-gray-200 hover:bg-gray-100 odd:bg-gray-100 even:bg-white">
                         <td class="py-3 px-6">{{ $product->name }}</td>
                         <td class="py-3 px-6">{{ $product->description }}</td>
                         <td class="py-3 px-6">${{ number_format($product->price, 2) }}</td>

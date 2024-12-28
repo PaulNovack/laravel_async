@@ -24,6 +24,12 @@ class ProductController extends Controller
             'path' => LengthAwarePaginator::resolveCurrentPath(),
             'query' => $request->query(), // Retain query parameters
         ]);
+        $productsArray = $product->aFetchResults();
+
+        $products = new LengthAwarePaginator($productsArray, $totalProducts, $perPage, $currentPage, [
+            'path' => LengthAwarePaginator::resolveCurrentPath(),
+            'query' => $request->query(), // Retain query parameters
+        ]);
         return view('products.index', compact('products'));
     }
 }

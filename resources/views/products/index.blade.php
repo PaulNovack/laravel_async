@@ -20,9 +20,9 @@
     <div class="bg-gray-100 min-h-screen">
         <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
         <div class="table-users">
-            <div class="header bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-bold py-4 px-6 rounded-t-lg">Products</div>
+            <div class="header bg-gradient-to-r from-blue-400 to-gray-400 text-white text-lg font-bold py-4 px-6 rounded-t-lg">Products</div>
             <table class="min-w-full bg-white shadow-lg rounded-b-lg overflow-hidden">
-                <thead class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+                <thead class="bg-gradient-to-r from-gray-400 to-blue-400 text-white">
                     <tr>
                         <th class="py-3 px-6 text-left text-sm font-medium">Name</th>
                         <th class="py-3 px-6 text-left text-sm font-medium">Description</th>

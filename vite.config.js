@@ -8,6 +8,14 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public/build',
+        rollupOptions: {
+            input: {
+                app: 'resources/css/app.css',
+            },
+        },
+    },
     server: {
         host: '127.0.0.1',
         port: 5173,

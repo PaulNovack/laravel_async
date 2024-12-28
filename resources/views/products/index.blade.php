@@ -20,7 +20,7 @@
     <div class="bg-gray-100 min-h-screen">
         <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
         <div class="px-4">
-            <form method="GET" action="{{ route('products.index') }}" class="mb-4 flex items-center">
+            <form method="GET" action="{{ url()->current() }}" class="mb-4 flex items-center">
                 <input type="text" name="search" placeholder="Search products..." value="{{ request('search') }}" class="border rounded py-2 px-4 mr-2">
                 <button type="submit" class="bg-blue-500 text-white rounded py-2 px-4">Search</button>
             </form>

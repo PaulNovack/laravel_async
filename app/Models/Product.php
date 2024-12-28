@@ -18,7 +18,7 @@ class Product extends Model
     ];
     private ZeroMQService $zeroMQService;
 
-    public function aFetchAll($search = null)
+    public function aFetchSearch($search = null)
     {
         $this->zeroMQService = new ZeroMQService();
         $query = Product::query();

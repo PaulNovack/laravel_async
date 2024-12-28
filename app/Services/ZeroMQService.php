@@ -28,10 +28,22 @@ class ZeroMQService
         $this->socket->sendmulti(['', $payload]);
     }
 
-    public function aSyncFetch(): array
+    public function aSyncFetch(string $modelClass): array
     {
         $response = $this->socket->recvMulti();
         $payload = msgpack_unpack($response[0]);
-        return $payload['data'] ?? [];
+        $data = $payload['data'] ?? [];
+        $models = [];
+
+        foreach ($data as $item) {
+            $model = new $modelClass();
+            foreach ($item as $key => $value) {
+                if ($key !== 'password') { // Avoid setting the password directly
+                    $model->$key = $value;
+                }
+            }
+            $models[] = $model;
+        }
+        return $models;
     }
 }

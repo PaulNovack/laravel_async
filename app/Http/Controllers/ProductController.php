@@ -12,7 +12,7 @@ class ProductController extends Controller
     {
         $product = new Product();
         $search = $request->input('search');
-        $product->aFetchAll($search);
+        $product->aFetchSearch($search);
         $productsArray = $product->aFetchResults();
         $perPage = 10;
         $currentPage = LengthAwarePaginator::resolveCurrentPage();

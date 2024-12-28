@@ -12,7 +12,7 @@ class ProductsTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 50) as $index) {
+        foreach (range(1, 500) as $index) {
             DB::table('products')->insert([
                 'name' => $faker->word,
                 'description' => $faker->sentence,

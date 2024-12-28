@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->aFetchAll();
-        $products = $product->aFetchResults();
+        $products = $product->aFetchResults()->paginate(10);
         return view('products.index', compact('products'));
     }
 }

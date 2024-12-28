@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel Asynchronous SQL ZeroMQ Queries</title>
+        <title>Laravel Asynchronous mySQL ZeroMQ Queries</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,7 +22,7 @@
     <body class="font-sans antialiased bg-gray-100 text-gray-900">
         <nav class="bg-white shadow-md sticky top-0 z-50">
             <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-                <a href="/" class="text-xl font-bold text-gray-800">Laravel Asynchronous SQL ZeroMQ Queries</a>
+                <a href="/" class="text-xl font-bold text-gray-800">Laravel Asynchronous mySQL ZeroMQ Queries</a>
                 <div class="flex space-x-4">
                     <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
                     <a href="/users" class="text-gray-600 hover:text-gray-800">Users</a>
@@ -32,9 +32,9 @@
         </nav>
         <div class="bg-gray-100 min-h-screen flex items-center justify-center">
             <div class="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-lg">
-                <h1 class="text-3xl font-bold mb-4">Laravel Asynchronous SQL ZeroMQ Queries</h1>
+                <h1 class="text-3xl font-bold mb-4">Laravel Asynchronous mySQL ZeroMQ Queries</h1>
                 <p class="text-lg text-gray-700">
-                    Welcome to the Laravel Asynchronous SQL ZeroMQ Queries page. This page demonstrates the integration of asynchronous SQL queries using ZeroMQ in a Laravel application.
+                    Welcome to the Laravel Asynchronous mySQL ZeroMQ Queries page. This page demonstrates the integration of asynchronous mySQL queries using ZeroMQ in a Laravel application.
                 </p>
             </div>
         </div>

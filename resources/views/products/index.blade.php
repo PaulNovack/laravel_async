@@ -7,13 +7,28 @@
     <link href="{{ asset('build/assets/app-B_EfxRPF.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto p-4">
-        <h1 class="text-2xl font-bold mb-4">Products List</h1>
-        <ul>
-            @foreach($products as $product)
-                <li class="mb-2">{{ $product->name }} - ${{ $product->price }}</li>
-            @endforeach
-        </ul>
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+            <thead class="bg-gray-200">
+                <tr>
+                    <th class="py-3 px-6 text-left text-sm font-medium text-gray-700">Name</th>
+                    <th class="py-3 px-6 text-left text-sm font-medium text-gray-700">Description</th>
+                    <th class="py-3 px-6 text-left text-sm font-medium text-gray-700">Price</th>
+                    <th class="py-3 px-6 text-left text-sm font-medium text-gray-700">Quantity</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-600">
+                @foreach($products as $product)
+                    <tr class="border-b border-gray-200 hover:bg-gray-100">
+                        <td class="py-3 px-6">{{ $product->name }}</td>
+                        <td class="py-3 px-6">{{ $product->description }}</td>
+                        <td class="py-3 px-6">${{ number_format($product->price, 2) }}</td>
+                        <td class="py-3 px-6">{{ $product->quantity }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

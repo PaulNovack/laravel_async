@@ -16,11 +16,16 @@ class Product extends Model
         'price',
         'quantity',
     ];
-    public static function fetchAll()
+    public static function sendQuery()
     {
         $zeroMQService = new ZeroMQService();
         $sql = "SELECT * FROM products";
         $zeroMQService->execAsynch($sql);
-        return $zeroMQService->aSyncFetch();
+    }
+
+    public static function fetchResults()
+    {
+        $zeroMQService = new ZeroMQService();
+        return $zeroMQService->aSyncFetch(self::class);
     }
 }

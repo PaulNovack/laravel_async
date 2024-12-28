@@ -19,12 +19,12 @@
     </nav>
     <div class="bg-gray-100 min-h-screen">
         <div class="container mx-auto p-8">
-            <h1 class="text-3xl font-bold mb-6">Users List</h1>
-            <ul class="space-y-4">
+            <h1 class="text-4xl font-extrabold mb-8 text-center text-gray-800">Users List</h1>
+            <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($users as $user)
-                    <li class="p-4 bg-white shadow rounded-lg">
-                        <div class="text-lg font-semibold">{{ $user->name }}</div>
-                        <div class="text-gray-600">{{ $user->email }}</div>
+                    <li class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="text-xl font-bold text-gray-900">{{ $user->name }}</div>
+                        <div class="text-gray-500">{{ $user->email }}</div>
                     </li>
                 @endforeach
             </ul>

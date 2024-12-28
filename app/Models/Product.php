@@ -26,7 +26,6 @@ class Product extends Model
             $query->where('name', 'LIKE', "%$search%")
                   ->orWhere('description', 'LIKE', "%$search%");
         }
-        $query->offset($offset)->limit($limit);
         $sql = $query->toSql();
         $bindings = $query->getBindings();
         $sqlWithBindings = vsprintf(str_replace('?', '%s', $sql), array_map(function ($binding) {

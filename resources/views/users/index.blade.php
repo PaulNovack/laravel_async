@@ -9,7 +9,7 @@
 <body class="bg-gray-100">
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <a href="/" class="text-xl font-bold text-gray-800">Laravel App</a>
+            <a href="/" class="text-xl font-bold text-gray-800">Laravel Asynchronous SQL ZeroMQ Queries</a>
             <div class="flex space-x-4">
                 <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
                 <a href="/users" class="text-gray-600 hover:text-gray-800">Users</a>

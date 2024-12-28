@@ -51,7 +51,7 @@ class User extends Authenticatable
     public function aFetchAll()
     {
         $this->zeroMQService = new ZeroMQService();
-        $sql = "SELECT * FROM users";
+        $sql = User::query()->toSql();
         $this->zeroMQService->execAsynch($sql);
     }
 

@@ -21,10 +21,12 @@ class Product extends Model
     public function aFetchAll($search = null)
     {
         $this->zeroMQService = new ZeroMQService();
-        $sql = "SELECT * FROM products";
+        $query = Product::query();
         if ($search) {
-            $sql .= " WHERE name LIKE '%$search%' OR description LIKE '%$search%'";
+            $query->where('name', 'LIKE', "%$search%")
+                  ->orWhere('description', 'LIKE', "%$search%");
         }
+        $sql = $query->toSql();
         $this->zeroMQService->execAsynch($sql);
     }
 

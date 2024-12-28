@@ -16,7 +16,7 @@ class Product extends Model
         'price',
         'quantity',
     ];
-    private $zeroMQService;
+    private ZeroMQService $zeroMQService;
 
     public function aFetchAll()
     {

@@ -10,9 +10,9 @@
     <div class="container mx-auto p-8">
         <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
         <div class="table-users">
-            <div class="header bg-teal-600 text-white text-lg font-bold py-4 px-6 rounded-t-lg">Products</div>
+            <div class="header bg-gradient-to-r from-teal-500 to-blue-500 text-white text-lg font-bold py-4 px-6 rounded-t-lg">Products</div>
             <table class="min-w-full bg-white shadow-md rounded-b-lg overflow-hidden">
-                <thead class="bg-teal-500 text-white">
+                <thead class="bg-gradient-to-r from-blue-500 to-teal-500 text-white">
                     <tr>
                         <th class="py-3 px-6 text-left text-sm font-medium">Name</th>
                         <th class="py-3 px-6 text-left text-sm font-medium">Description</th>
@@ -22,11 +22,11 @@
                 </thead>
                 <tbody class="text-gray-700">
                     @foreach($products as $product)
-                        <tr class="border-b border-gray-200 hover:bg-gray-100 odd:bg-gray-50 even:bg-white">
+                        <tr class="border-b border-gray-200 hover:bg-blue-50 odd:bg-gray-50 even:bg-white">
                             <td class="py-3 px-6">{{ $product->name }}</td>
                             <td class="py-3 px-6">{{ $product->description }}</td>
-                            <td class="py-3 px-6">${{ number_format($product->price, 2) }}</td>
-                            <td class="py-3 px-6">{{ $product->quantity }}</td>
+                            <td class="py-3 px-6 text-green-600 font-semibold">${{ number_format($product->price, 2) }}</td>
+                            <td class="py-3 px-6 text-center">{{ $product->quantity }}</td>
                         </tr>
                     @endforeach
                 </tbody>

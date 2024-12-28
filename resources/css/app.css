@@ -9,6 +9,8 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .table-users .header {

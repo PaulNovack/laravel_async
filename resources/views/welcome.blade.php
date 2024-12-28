@@ -20,7 +20,7 @@
         @endif
     </head>
     <body class="font-sans antialiased bg-gray-100 text-gray-900">
-        <nav class="bg-white shadow-md">
+        <nav class="bg-white shadow-md sticky top-0 z-50">
             <div class="container mx-auto px-4 py-2 flex justify-between items-center">
                 <a href="/" class="text-xl font-bold text-gray-800">Laravel App</a>
                 <div class="flex space-x-4">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products List</title>
-    <link href="{{ asset('build/assets/app-9WE-lee6.css') }}" rel="stylesheet">
+    @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100">
     <nav class="bg-white shadow-md sticky top-0 z-50">

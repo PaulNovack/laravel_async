@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        foreach (range(1, 50) as $index) {
+        foreach (range(1, 500) as $index) {
             DB::table('users')->insert([
                 'firstname' => $faker->firstName,
                 'lastname' => $faker->lastName,

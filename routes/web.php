@@ -11,3 +11,4 @@ Route::get('/', function () {
 
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products-laravel', [ProductLaravelController::class, 'index'])->name('products.laravel.index');

@@ -18,6 +18,7 @@ class ProductController extends Controller
         $offset = ($currentPage - 1) * $perPage;
 
         $product->aFetchSearch($search, $offset, $perPage);
+        $product->aFetchSearch($search, $offset, $perPage);
         $productsArray = $product->aFetchResults();
 
         $products = new LengthAwarePaginator($productsArray, $totalProducts, $perPage, $currentPage, [

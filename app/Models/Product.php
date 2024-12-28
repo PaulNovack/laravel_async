@@ -27,7 +27,11 @@ class Product extends Model
                   ->orWhere('description', 'LIKE', "%$search%");
         }
         $sql = $query->toSql();
-        $this->zeroMQService->execAsynch($sql);
+        $bindings = $query->getBindings();
+        $sqlWithBindings = vsprintf(str_replace('?', '%s', $sql), array_map(function ($binding) {
+            return is_numeric($binding) ? $binding : "'$binding'";
+        }, $bindings));
+        $this->zeroMQService->execAsynch($sqlWithBindings);
     }
 
     public function aFetchResults()

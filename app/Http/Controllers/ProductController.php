@@ -8,7 +8,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $product = new Product();
         $search = $request->input('search');

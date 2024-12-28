@@ -26,7 +26,8 @@
                 <div class="flex space-x-4">
                     <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
                     <a href="/users" class="text-gray-600 hover:text-gray-800">Users</a>
-                    <a href="/products" class="text-gray-600 hover:text-gray-800">Products</a>
+                    <a href="/products-laravel" class="text-gray-600 hover:text-gray-800">Laravel Products</a>
+                    <a href="/products" class="text-gray-600 hover:text-gray-800">ZeroMQ Products</a>
                 </div>
             </div>
         </nav>

@@ -7,7 +7,17 @@
     <link href="{{ asset('build/assets/app-9WE-lee6.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
-    <div class="container mx-auto p-8">
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-gray-800">Laravel App</a>
+            <div class="flex space-x-4">
+                <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+                <a href="/users" class="text-gray-600 hover:text-gray-800">Users</a>
+                <a href="/products" class="text-gray-600 hover:text-gray-800">Products</a>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-gray-100 min-h-screen">
         <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
         <div class="table-users">
             <div class="header bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-lg font-bold py-4 px-6 rounded-t-lg">Products</div>

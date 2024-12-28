@@ -20,7 +20,17 @@
         @endif
     </head>
     <body class="font-sans antialiased bg-gray-100 text-gray-900">
-        <div class="min-h-screen flex items-center justify-center">
+        <nav class="bg-white shadow-md">
+            <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+                <a href="/" class="text-xl font-bold text-gray-800">Laravel App</a>
+                <div class="flex space-x-4">
+                    <a href="/" class="text-gray-600 hover:text-gray-800">Home</a>
+                    <a href="/users" class="text-gray-600 hover:text-gray-800">Users</a>
+                    <a href="/products" class="text-gray-600 hover:text-gray-800">Products</a>
+                </div>
+            </div>
+        </nav>
+        <div class="bg-gray-100 min-h-screen flex items-center justify-center">
             <div class="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-lg">
                 <h1 class="text-3xl font-bold mb-4">Laravel Asynchronous SQL ZeroMQ Queries</h1>
                 <p class="text-lg text-gray-700">

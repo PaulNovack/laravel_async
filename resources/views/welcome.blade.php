@@ -35,7 +35,7 @@
             <div class="max-w-2xl mx-auto p-8 bg-white shadow-lg rounded-lg">
                 <h1 class="text-3xl font-bold mb-4">Laravel Asynchronous mySQL ZeroMQ Queries</h1>
                 <p class="text-lg text-gray-700">
-                    Welcome to the Laravel Asynchronous mySQL ZeroMQ Queries page. This page demonstrates the integration of asynchronous mySQL queries using ZeroMQ in a Laravel application.
+                    Welcome to the Laravel Asynchronous mySQL ZeroMQ Queries Application. This Application demonstrates the integration of asynchronous mySQL queries using ZeroMQ in a Laravel application.
                 </p>
             </div>
         </div>

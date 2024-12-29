@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Database\QueryException;
 use ZMQ;
 use ZMQContext;
 
@@ -12,17 +13,21 @@ class ZeroMQService
     private $clientId;
     private $queryId;
 
+    private $sql;
+
     public function __construct()
     {
         $this->context = new ZMQContext();
         $this->clientId = uniqid("client_");
         $this->socket = $this->context->getSocket(ZMQ::SOCKET_DEALER);
         $this->socket->setSockOpt(ZMQ::SOCKOPT_IDENTITY, $this->clientId);
+        $this->socket->setSockOpt(ZMQ::SOCKOPT_RCVTIMEO, 5000);
         $this->socket->connect("tcp://127.0.0.1:5555");
     }
 
     public function execAsynch($sql)
     {
+        $this->sql = $sql;
         $this->queryId = uniqid("query_");
         $payload = msgpack_pack(['id' => $this->queryId, 'query' => $sql]);
         $this->socket->sendmulti(['', $payload]);
@@ -32,6 +37,14 @@ class ZeroMQService
     {
         $response = $this->socket->recvMulti();
         $payload = msgpack_unpack($response[0]);
+        if(isset($payload['ERROR:SQLException'])){
+            throw new QueryException(
+                "", // The SQL query causing the error (if available, provide it here)
+                new \Exception($this->sql) , // Bindings for the query (if any, pass them here)
+                [],
+                new \Exception($payload['ERROR:SQLException'])// The actual exception message
+            );
+        }
         $data = $payload['data'] ?? [];
         $models = [];
 

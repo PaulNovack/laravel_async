@@ -45,6 +45,9 @@ class ZeroMQService
                 new \Exception($payload['ERROR:SQLException'])// The actual exception message
             );
         }
+        // Can add handling for unlikely
+        // ERROR:ASYNCSQLSERVERGENERALEXCEPTION
+        // and ERROR:ASYNCSQLSERVERUNHANDLEDEXCEPTIONTYPE
         $data = $payload['data'] ?? [];
         $models = [];
 

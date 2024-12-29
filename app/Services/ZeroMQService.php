@@ -39,10 +39,10 @@ class ZeroMQService
         $payload = msgpack_unpack($response[0]);
         if(isset($payload['ERROR:SQLException'])){
             throw new QueryException(
-                "", // The SQL query causing the error (if available, provide it here)
-                new \Exception($this->sql) , // Bindings for the query (if any, pass them here)
+                "ZeroMQServiceMySQLConnection",
+                new \Exception($this->sql) ,
                 [],
-                new \Exception($payload['ERROR:SQLException'])// The actual exception message
+                new \Exception($payload['ERROR:SQLException'])
             );
         }
         // Can add handling for unlikely

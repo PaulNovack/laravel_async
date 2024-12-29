@@ -19,7 +19,7 @@
         </div>
     </nav>
     <div class="bg-gray-100 min-h-screen">
-        <h1 class="text-3xl font-bold mb-6 text-center">Products List</h1>
+        <h1 class="text-4xl font-extrabold mb-8 text-center text-gray-800">Products List</h1>
         <div class="px-4">
             <form method="GET" action="{{ url()->current() }}" class="mb-4 flex items-center">
                 <input type="text" name="search" placeholder="Search products..." value="{{ request('search') }}" class="border rounded py-2 px-4 mr-2">
